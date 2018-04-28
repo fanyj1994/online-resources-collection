@@ -1,0 +1,59 @@
+@import './_reset';
+
+#app {
+  font-family: 16px/1.5 "Helvetica Neue For Number", 
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* variables */
+$primary-color: #0092b9;
+
+/* header */
+header {
+  a {
+    display: flex;
+    // background-color: $primary-color;
+    align-items: center;
+    text-decoration: none;
+    padding-left: 15%;
+    height: 80px;
+
+    img {
+      width: 40px;
+    }
+
+    h1 {
+      font-size: 20px;
+      color: $primary-color;
+      margin-left: 20px;
+    }
+  }
+}
+
+/* nav */
+.nav,
+.container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+ul.nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 30px;
+  border-bottom: 2px solid $primary-color;
+
+  li {
+    height: 100%;
+  }
+
+  li.active {
+    border-bottom: 3px solid #c90;
+  }
+
+}
+
+/* conatainer */
