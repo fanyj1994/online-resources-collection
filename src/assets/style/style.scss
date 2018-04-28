@@ -8,8 +8,12 @@
 }
 
 /* variables */
-$primary-color: #0092b9;
+$primary-color: #13e0bc;
 
+
+body {
+  background-color: #f7f7f7;
+}
 /* header */
 header {
   a {
@@ -18,16 +22,11 @@ header {
     align-items: center;
     text-decoration: none;
     padding-left: 15%;
-    height: 80px;
-
-    img {
-      width: 40px;
-    }
+    height: 100px;
 
     h1 {
-      font-size: 20px;
-      color: $primary-color;
-      margin-left: 20px;
+      font-size: 28px;
+      color: #345;
     }
   }
 }
@@ -43,17 +42,19 @@ ul.nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 30px;
-  border-bottom: 2px solid $primary-color;
+  height: 60px;
+  box-shadow: 0 0 1px 2px rgba(0, 0, 0, $alpha: .04);
+  background-color: #fff;
 
   li {
-    height: 100%;
-  }
+    a {
+      font-size: 14px;
+    }
 
-  li.active {
-    border-bottom: 3px solid #c90;
+    a.router-link-active {
+      color: $primary-color;
+    }
   }
-
 }
 
-/* conatainer */
+/* container */
