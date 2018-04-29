@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header>
-      <router-link to="/">
+      <router-link to="/" @click="addBeginActiveMenu">
         <!-- <img src="./assets/logo.png" alt="logo"> -->
         <h1>发现你需要的互联网资源</h1>
       </router-link>
@@ -40,16 +40,32 @@ export default {
       ]
     }
   },
+  mounted () {
+    this.addBeginActiveMenu()
+  },
+  watch: {
+    '$route' () {
+      this.addBeginActiveMenu()
+    }
+  },
   methods: {
+    addBeginActiveMenu () {
+      let path = this.$route.path
+      if (path === '/' || path === '/openCourse') {
+        let openCourseMenu = document.querySelectorAll('.nav li a')[0]
+      console.log(openCourseMenu)
+        openCourseMenu.classList.add('router-link-active')
+      }
+    },
     changeCategory (e) {
       e.preventDefault()
-      console.log(e.target)
-      let categorys = document.querySelectorAll('.nav li');
+      let categorys = document.querySelectorAll('.nav li a');
+
       categorys.forEach(category => {
-        category.classList.remove('active')
+        category.classList.remove('router-link-active')
       })
 
-      e.target.classList.add('active')
+      e.target.classList.add('router-link-active')
     }
   }
 };
